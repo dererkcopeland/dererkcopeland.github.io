@@ -162,3 +162,35 @@ export const education =
 
   };
 
+export const accomplishments = [
+  {
+    id: 1,
+    image: "/winter2023.png",
+    url: "https://www.credly.com/badges/221a5e4d-6cc5-4a2f-a6d5-a31eb7d88f60"
+  },
+  {
+    id: 2,
+    image: "/spring2023.png",
+    url: "https://www.credly.com/badges/85010962-e441-4d61-ba52-736ff710c1fd"
+  },
+  {
+    id: 3,
+    image: "/fall2023.png",
+    url: "https://www.credly.com/badges/d9c4c5b0-71bf-4db7-b9a5-3105985ea038"
+  },
+  {
+    id: 4,
+    image: "/winter2024.png",
+    url: "https://www.credly.com/badges/c361a9b1-6740-4f9b-9315-a691d6722fc5"
+  },
+  {
+    id: 5,
+    image: "/spring2024.png",
+    url: "https://www.credly.com/badges/02770414-7fc7-46bf-a425-87480d5f96d8"
+  },
+  {
+    id: 6,
+    image: "/fall2024.png",
+    url: "https://www.credly.com/badges/3384def5-47c3-4949-8efa-618782c1af5b"
+  },
+]
