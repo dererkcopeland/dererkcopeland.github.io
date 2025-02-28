@@ -153,12 +153,12 @@ export const education =
     title: "BS: Information Technology - Software Development\nSpecialization: Mobile Development",
     graduationDate: "Expected - 2027",
     subheading: "Capella University",
-    description: `I am actively engaged in Capella University's Bachelor of Science in Information Technology (BSIT) program, specializing in Software Development with a focused concentration in Mobile Development. This comprehensive program is designed to provide me with a robust understanding of modern software development principles, methodologies, and practices, grounded in the Software Engineering Body of Knowledge (SWEBOK).
+    description: `I am actively engaged in Capella University's Bachelor of Science in Information Technology (BSIT) program, specializing in Software Development with a focused concentration in Mobile Development. This comprehensive program is designed to provide me with a robust understanding of modern software development principles, methodologies, and practices.
 
     My coursework emphasizes the development of increasingly complex computer programs and end-user mobile applications, employing Agile methods for efficient and iterative development. I am gaining proficiency in the full software development lifecycle, encompassing software requirements definition, design, construction, testing, and the implementation of robust application security measures, all tailored to the unique demands of mobile platforms.
     
     The Mobile Development concentration specifically prepares me to apply core software development knowledge to the creation of applications designed for mobile environments. I am learning to plan, evaluate, design, and manage mobile applications across various scales, from single-user applications to complex enterprise solutions. This specialization is equipping me with the skills and knowledge necessary to pursue a successful career as a mobile application designer, mobile developer, or software engineer, and to pursue relevant industry certifications in the mobile development field.`,
-    image: "/capella1.jpg",
+    image: "/capella1.png",
 
   };
 

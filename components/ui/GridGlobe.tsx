@@ -3,7 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
 
-const World = dynamic(() => import("./Globe").then((m) => m.World), {
+const World = dynamic(() => import("../ui/globe").then((m) => m.World), {
   ssr: false,
 });
 
@@ -394,6 +394,7 @@ const GridGlobe = () => {
     },
   ];
 
+  
   return (
     // remove dark:bg-black bg-white h-screen md:h-auto  w-full flex-row py-20
     // change absolute -left-5 top-36, add w-full h-full md:top-40
@@ -426,6 +427,8 @@ const GridGlobe = () => {
         <div className="absolute w-full bottom-0 inset-x-0 h-40 bg-gradient-to-b pointer-events-none select-none from-transparent dark:to-black to-white z-40" />
         {/* remove -bottom-20 */}
         <div className="absolute w-full h-72 md:h-full z-10">
+        {console.log(sampleArcs)
+        }
           <World data={sampleArcs} globeConfig={globeConfig} />
         </div>
       </div>

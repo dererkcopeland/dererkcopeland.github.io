@@ -10,11 +10,13 @@
   },
   "dependencies": {
     "@react-three/drei": "^10.0.3",
-    "@react-three/fiber": "^9.0.4",
+    "@react-three/fiber": "^9.0.0-alpha.8",
     "@sentry/nextjs": "^9.2.0",
     "@tabler/icons-react": "^3.30.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "core-js": "^3.40.0",
+    "lodash": "^4.17.21",
     "lottie-react": "^2.4.1",
     "lucide-react": "^0.476.0",
     "mini-svg-data-uri": "^1.4.4",
@@ -27,8 +29,9 @@
     "react-lottie": "^1.2.10",
     "tailwind-merge": "^3.0.2",
     "tailwindcss-animate": "^1.0.7",
-    "three": "^0.173.0",
-    "three-globe": "^2.41.12"
+    "three": "^0.174.0",
+    "three-globe": "^2.41.12",
+    "three-orbitcontrols": "^2.110.2"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
@@ -41,6 +44,5 @@
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
-  },
-  "packageManager": "pnpm@9.7.0+sha512.dc09430156b427f5ecfc79888899e1c39d2d690f004be70e05230b72cb173d96839587545d09429b55ac3c429c801b4dc3c0e002f653830a420fa2dd4e3cf9cf"
+  }
 }

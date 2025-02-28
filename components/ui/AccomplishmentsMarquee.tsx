@@ -7,7 +7,7 @@ import { CardContainer, CardItem } from "./3d-card";
 export const AccomplishmentsMarquee = ({
   items,
   direction = "left",
-  speed = "medium",
+  speed = "normal",
   pauseOnHover = true,
   className,
 }: {
