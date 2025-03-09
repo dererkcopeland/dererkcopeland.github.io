@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { ToastProvider } from '@/components/ui/Toast';
 
 import "./globals.css";
 import { ThemeProvider } from "./provider";
@@ -28,7 +29,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+        <ToastProvider>
           {children}
+        </ToastProvider>
+
         </ThemeProvider>
       </body>
     </html>

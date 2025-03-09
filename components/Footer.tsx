@@ -37,7 +37,7 @@ const Footer = () => {
           Copyright © 2025 Dererk Copeland
         </p>
 
-        <div className="flex items-center md:gap-3 gap-6">
+        <div className="flex items-center md:gap-3 gap-6 py-4">
           {socialMedia.map((info) => (
             <div
               key={info.id}

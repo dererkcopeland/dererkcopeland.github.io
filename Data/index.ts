@@ -2,10 +2,11 @@ import { url } from "inspector";
 import { sub } from "motion/react-client";
 
 export const navItems = [
-  { name: "About", link: "#about" },
-  { name: "Projects", link: "#projects" },
-  { name: "Contact", link: "#contact" },
+  { name: "About", link: "/?hash=about" },
+  { name: "Projects", link: "/?hash=projects" },
+  { name: "Contact", link: "/?hash=contact" },
 ];
+
 
 export const gridItems = [
   {
@@ -55,7 +56,7 @@ export const projects = [
     id: 1,
     title: "doojoo | AI Lyrics Generator",
     des: "Doojoo is an innovative AI lyrics generator that transforms simple prompts into custom, creative song lyrics tailored to your musical style and emotional needs.",
-    img: "/preview1.png",
+    img: "/preview2.jpeg",
     iconLists: ["/i1.png", "/i2.webp", "/i3.png", "/i4.svg", "/i5.webp"],
     link: "https://play.google.com/store/apps/details?id=com.doojoo.lyric&hl=en_US",
   },

@@ -15,7 +15,7 @@ const RecentProjects = () => {
   if (!isClient) return null; // Prevent mismatches by rendering only on the client
 
   return (
-    <div className="py-20 relative">
+    <div className="py-20 relative" id="projects">
       <h1 className="heading mt-16 md:mt-24 mb-10 text-center">
         A <span className="text-purple">Recent Project</span>
       </h1>
@@ -38,11 +38,11 @@ const RecentProjects = () => {
                 <img
                   src={item.img}
                   alt="cover"
-                  className="z-10 absolute bottom-0 object-contain w-full h-full"
+                  className="z-10 absolute bottom-0 object-cover w-full h-full"
                 />
               </div>
 
-              <h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-1">
+              <h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-1 py-3">
                 {item.title}
               </h1>
 
