@@ -1,6 +1,6 @@
 "use client";
 
-import { navItems } from "@/Data";
+import { navItems } from "@/data";
 import { useEffect } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 

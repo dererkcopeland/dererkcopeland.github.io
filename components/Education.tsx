@@ -1,4 +1,4 @@
-import { accomplishments, education, gridItems } from "@/Data";
+import { accomplishments, education, gridItems } from "@/data";
 import { BentoGrid, BentoGridItem } from "./ui/BentoGrid";
 import ThreeDCard from "./ui/3DCard";
 import { CardContainer, CardBody, CardItem } from "./ui/3d-card";

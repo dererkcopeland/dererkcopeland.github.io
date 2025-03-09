@@ -65,40 +65,10 @@ export const BentoGridItem = ({
     setIsClient(true);
   }, []);
 
-  const handleCopy = async () => {
-    const text = "dererk.copelandjr@gmail.com";
-    try {
-      if (isClient && navigator.clipboard) {
-        await navigator.clipboard.writeText(text);
-        setCopied(true);
-        setTimeout(() => {
-          setCopied(false);
-        }, 3000);
-        const toast: ToastProps = {
-            title: "Email Copied!",
-            type: "success",
-            duration: 2000,
-          }
-        addToast(toast) // call the function
-      } else {
-        console.error("Clipboard API not available");
-        // Show alert message
-        showToast({
-          title: "Copy Failed",
-          description:
-            "The copy feature might not work because you're not using HTTPS or your browser doesn't support the Clipboard API. Please copy manually.",
-          type: "error",
-        });
-      }
-    } catch (error) {
-      console.error("Failed to copy text:", error);
-      showToast({
-        title: "Copy Failed",
-        description:
-          "An error occurred while trying to copy. Please try again later or copy manually.",
-        type: "error",
-      });
-    }
+  const handleCopy = () => {
+    const text = "hsu@jsmastery.pro";
+    navigator.clipboard.writeText(text);
+    setCopied(true);
   };
 
   return (
