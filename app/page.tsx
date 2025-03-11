@@ -1,7 +1,7 @@
 "use client";
 
 import { navItems } from "@/data";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 
 import Hero from "@/components/Hero";
@@ -10,6 +10,21 @@ import Footer from "@/components/Footer";
 import RecentProjects from "@/components/RecentProjects";
 import { FloatingNav } from "@/components/ui/FloatingNav";
 import Education from "@/components/Education";
+
+export function ClientOnly({ children }: { children: React.ReactNode }) {
+  const [hasMounted, setHasMounted] = useState(false);
+
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
+  if (!hasMounted) {
+    return null; // or a loading placeholder
+  }
+
+  return <>{children}</>;
+}
+
 
 const Home = () => {
   const pathname = usePathname();
@@ -40,11 +55,13 @@ const Home = () => {
         <FloatingNav navItems={navItems} />
       </nav>
       <div className="max-w-7xl w-full">
+        <ClientOnly>
         <Hero />
         <Grid />
         <RecentProjects />
         <Education />
         <Footer />
+        </ClientOnly>
       </div>
     </main>
   );

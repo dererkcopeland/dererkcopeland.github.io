@@ -1,4 +1,4 @@
-"use client";
+
 
 import { projects } from "@/data";
 import React, { useEffect, useState } from "react";
