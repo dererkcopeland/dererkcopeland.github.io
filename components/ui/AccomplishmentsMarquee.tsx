@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import React, { useEffect, useState } from "react";
-import { CardContainer, CardItem } from "./3d-card";
+import { FramerCardContainer, FramerCardItem } from "./3d-card";
 
 export const AccomplishmentsMarquee = ({
   items,
@@ -24,7 +24,7 @@ export const AccomplishmentsMarquee = ({
   const containerRef = React.useRef<HTMLDivElement>(null);
   const scrollerRef = React.useRef<HTMLUListElement>(null);
   const [start, setStart] = useState(false);
-  const [duplicatedItems, setDuplicatedItems] = useState([...items, ...items]); // Duplicate before rendering
+  const duplicatedItems = [...items, ...items]; // Duplicate before rendering
 
   useEffect(() => {
     if (containerRef.current) {
@@ -70,8 +70,8 @@ export const AccomplishmentsMarquee = ({
       >
         {duplicatedItems.map((item, idx) => (
           <li key={idx} className="flex-shrink-0 w-[400px] md:w-[500px]">
-            <CardContainer>
-              <CardItem>
+            <FramerCardContainer className="inter-var">
+              <FramerCardItem>
                 <a
                   href={item.url}
                   target="_blank"
@@ -86,8 +86,8 @@ export const AccomplishmentsMarquee = ({
                     alt={`thumbnail-${item.image}`}
                   />
                 </a>
-              </CardItem>
-            </CardContainer>
+              </FramerCardItem>
+            </FramerCardContainer>
           </li>
         ))}
       </ul>

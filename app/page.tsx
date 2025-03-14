@@ -1,6 +1,6 @@
 "use client";
 
-import { navItems } from "@/data";
+import { navItems } from "@/Data";
 import { useEffect, useState } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 
@@ -46,7 +46,7 @@ const Home = () => {
     } else {
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
-  }, [pathname]); // Run when the pathname changes (e.g., on navigation)
+  }, [pathname, searchParams]); // Run when the pathname or searchParams changes
 
   return (
     <main className="relative bg-black-100 flex justify-center items-center flex-col overflow-hidden mx-auto sm:px-10 px-5">

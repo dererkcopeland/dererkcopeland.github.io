@@ -1,9 +1,6 @@
-import { accomplishments, education, gridItems } from "@/data";
-import { BentoGrid, BentoGridItem } from "./ui/BentoGrid";
-import ThreeDCard from "./ui/3DCard";
-import { CardContainer, CardBody, CardItem } from "./ui/3d-card";
-import { PinContainer } from "./ui/3d-pin";
-import { useEffect } from "react";
+import { accomplishments, education } from "@/Data";
+import { FramerCardContainer } from "./ui/3d-card";
+import { FramerCardItem } from "./ui/3d-card";
 import { AccomplishmentsMarquee } from "./ui/AccomplishmentsMarquee";
 
 export function EducationCard({
@@ -23,25 +20,24 @@ export function EducationCard({
 
     return (
         <div>
-            <CardContainer className="inter-var col-span-1 md:col-span-2">
-                <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full h-full rounded-xl p-6 border flex flex-col items-center">
-                    <CardItem
-                        translateZ="50"
+            <FramerCardContainer className="inter-var col-span-1 md:col-span-2">
+                <div className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full h-full rounded-xl p-6 border flex flex-col items-center">
+                    <FramerCardItem
                         className="grid place-items-center text-xl font-bold text-neutral-600 dark:text-white text-center"
                     >
                         {title}
-                    </CardItem>
+                    </FramerCardItem>
 
-                    <CardItem as="p" translateZ="60" className="justify-center text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300">
+                    <FramerCardItem   className="justify-center text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300">
                         {graduationDate}
-                    </CardItem>
-                    <CardItem as="p" translateZ="60" className="justify-center text-red-500 text-sm max-w-sm mt-2">
+                    </FramerCardItem>
+                    <FramerCardItem  className="justify-center text-red-500 text-sm max-w-sm mt-2">
                         {subheading}
-                    </CardItem>
-                    <CardItem as="p" translateZ="60" className="w-full text-neutral-500 text-sm mt-2 dark:text-neutral-300 whitespace-pre-line">
+                    </FramerCardItem>
+                    <FramerCardItem   className="w-full text-neutral-500 text-sm mt-2 dark:text-neutral-300 whitespace-pre-line">
                         {description}
-                    </CardItem>
-                    <CardItem translateZ="100" rotateX={20} rotateZ={-10} className="w-full mt-4">
+                    </FramerCardItem>
+                    <FramerCardItem className="w-full mt-4">
                         <img
                             src={image}
                             height="500"
@@ -49,9 +45,9 @@ export function EducationCard({
                             className="h-[300px] md:h-[400px] w-full object-contain rounded-xl"
                             alt={`thumbnail-${image}`}
                         />
-                    </CardItem>
-                </CardBody>
-            </CardContainer>
+                    </FramerCardItem>
+                </div>
+            </FramerCardContainer>
 
             <AccomplishmentsMarquee items={accomplishments} />
 
