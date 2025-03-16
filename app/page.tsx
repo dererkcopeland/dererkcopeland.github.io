@@ -1,11 +1,12 @@
 "use client";
-
 import { navItems } from "@/Data";
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
+import dynamic from "next/dynamic";
 
 import Hero from "@/components/Hero";
-import Grid from "@/components/Grid";
+// Dynamically import Grid component with SSR disabled
+const Grid = dynamic(() => import("@/components/Grid"), { ssr: false });
 import Footer from "@/components/Footer";
 import RecentProjects from "@/components/RecentProjects";
 import { FloatingNav } from "@/components/ui/FloatingNav";
@@ -26,44 +27,51 @@ export function ClientOnly({ children }: { children: React.ReactNode }) {
 }
 
 
-const Home = () => {
+// Create a separate component for the search params logic
+function ScrollManager() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
   useEffect(() => {
-    const hash = searchParams.get("hash"); // Get the hash from the URL
-    if (hash) {
-      const element = document.getElementById(hash);
-      if (element) {
-        // Scroll to the element, taking into account the nav's height
-        const navHeight = document.querySelector("nav")?.clientHeight || 0;
-        const offsetTop = element.offsetTop - navHeight - 10;
-        window.scrollTo({ top: offsetTop, behavior: "smooth" });
-        // Clean the url
-        window.history.replaceState({}, document.title, window.location.pathname);
-
+    if (typeof window !== 'undefined' && typeof document !== 'undefined') {
+      const hash = searchParams.get("hash");
+      if (hash) {
+        const element = document.getElementById(hash);
+        if (element) {
+          const navHeight = document.querySelector("nav")?.clientHeight || 0;
+          const offsetTop = element.offsetTop - navHeight - 10;
+          window.scrollTo({ top: offsetTop, behavior: "smooth" });
+          window.history.replaceState({}, document.title, window.location.pathname);
+        }
+      } else {
+        window.scrollTo({ top: 0, behavior: "smooth" });
       }
-    } else {
-      window.scrollTo({ top: 0, behavior: "smooth" });
     }
-  }, [pathname, searchParams]); // Run when the pathname or searchParams changes
+  }, [pathname, searchParams]);
 
+  return null;
+}
+
+const Home = () => {
   return (
-    <main className="relative bg-black-100 flex justify-center items-center flex-col overflow-hidden mx-auto sm:px-10 px-5">
-      <nav className="max-w-7xl w-full">
-        {/* Wrap FloatingNav in a div to get its height */}
-        <FloatingNav navItems={navItems} />
-      </nav>
-      <div className="max-w-7xl w-full">
-        <ClientOnly>
-        <Hero />
-        <Grid />
-        <RecentProjects />
-        <Education />
-        <Footer />
-        </ClientOnly>
-      </div>
-    </main>
+    <ClientOnly>
+      <main className="relative bg-black-100 flex justify-center items-center flex-col overflow-hidden mx-auto sm:px-10 px-5">
+        <Suspense fallback={null}>
+          <ScrollManager />
+        </Suspense>
+        <nav className="max-w-7xl w-full">
+          {/* Wrap FloatingNav in a div to get its height */}
+          <FloatingNav navItems={navItems} />
+        </nav>
+        <div className="max-w-7xl w-full">
+          <Hero />
+          <Grid />
+          <RecentProjects />
+          <Education />
+          <Footer />
+        </div>
+      </main>
+    </ClientOnly>
   );
 };
 

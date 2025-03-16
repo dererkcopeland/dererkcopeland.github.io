@@ -7,7 +7,10 @@ import { BackgroundGradientAnimation } from "./GradientBg";
 import animationData from "@/Data/confetti.json";
 import MagicButton from "@/components/ui/MagicButton";
 import GridGlobe from "./GridGlobe";
-import Lottie from "lottie-react";
+import dynamic from "next/dynamic";
+
+// Dynamically import Lottie with SSR disabled
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
 export const BentoGrid = ({
   className,
@@ -58,6 +61,7 @@ export const BentoGridItem = ({
   }, []);
 
   const handleCopy = async () => {
+    if (typeof navigator !== 'undefined' && navigator.clipboard) {
       const text = "dererk.copelandjr@gmail.com";
       await navigator.clipboard.writeText(text);
       setCopied(true);
@@ -66,6 +70,7 @@ export const BentoGridItem = ({
       setTimeout(() => {
         setCopied(false);
       }, 2000);
+    }
   };
 
   if (!isClient) {
