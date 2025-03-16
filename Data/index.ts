@@ -1,10 +1,9 @@
-import { url } from "inspector";
-import { sub } from "motion/react-client";
 
 export const navItems = [
-  { name: "About", link: "/?hash=about" },
-  { name: "Projects", link: "/?hash=projects" },
-  { name: "Contact", link: "/?hash=contact" },
+  { name: "About", link: "#about" },
+  { name: "Projects", link: "#projects" },
+  { name: "Education", link: "#education" },
+  { name: "Contact", link: "#contact" },
 ];
 
 

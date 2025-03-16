@@ -20,7 +20,7 @@ export function EducationCard({
 
 
     return (
-        <div>
+        <div id="education">
             <FramerCardContainer className="inter-var col-span-1 md:col-span-2">
                 <div className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full h-full rounded-xl p-6 border flex flex-col items-center">
                     <FramerCardItem
@@ -61,7 +61,7 @@ export function EducationCard({
 const Education = () => {
     return (
 
-        <div className="py-20">
+        <div className="py-20" id="education">
             <h1 className="heading">
                 <span className="text-purple">Education</span>
             </h1>

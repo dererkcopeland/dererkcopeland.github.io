@@ -60,16 +60,24 @@ export const FloatingNav = ({
         )}
       >
         {navItems.map((navItem: { name: string; link: string; icon?: JSX.Element }, idx: number) => (
-          <Link
+          <a
             key={`link=${idx}`}
             href={navItem.link}
+            onClick={(e) => {
+              e.preventDefault();
+              const targetId = navItem.link.replace('#', '');
+              const element = document.getElementById(targetId);
+              if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
             className={cn(
-              "relative dark:text-neutral-50 items-center flex space-x-1 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500"
+              "relative dark:text-neutral-50 items-center flex space-x-1 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500 cursor-pointer"
             )}
           >
             <span className="block sm:hidden">{navItem.icon}</span>
             <span className="sm:block text-sm">{navItem.name}</span>
-          </Link>
+          </a>
         ))}
 
       </motion.div>

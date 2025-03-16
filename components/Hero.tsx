@@ -61,7 +61,16 @@ const Hero = () => {
             I&apos;m Dererk, an <span className="text-green-500">Android Developer</span> based in the United States.
           </p>
 
-          <a href="#about">
+          <a 
+            href="#projects" 
+            onClick={(e) => {
+              e.preventDefault();
+              const element = document.getElementById('projects');
+              if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
+          >
             <MagicButton
               title="Show my work"
               icon={<FaLocationArrow />}
