@@ -57,12 +57,20 @@ export const BentoGridItem = ({
   const rightLists = ["Kotlin", "Java", "Firebase"];
 
   const [copied, setCopied] = useState(false);
+  const [playAnimation, setPlayAnimation] = useState(false);
 
   const handleCopy = () => {
     const text = "dererk.copelandjr@gmail.com";
     navigator.clipboard.writeText(text);
     setCopied(true);
-
+    // Reset animation state then trigger it
+    setPlayAnimation(false);
+    setTimeout(() => setPlayAnimation(true), 10);
+    
+    // Reset the button text after 2 seconds
+    setTimeout(() => {
+      setCopied(false);
+    }, 2000);
   };
 
   return (
@@ -159,15 +167,16 @@ export const BentoGridItem = ({
           {id === 6 && (
             <div className="mt-5 relative">
               <div
-                className={`absolute -bottom-5 right-0 z-0 ${copied ? "block" : "block"
-                  }`}
+                className="absolute top-0 left-0 z-0"
               >
-                <Lottie
-                  animationData={animationData}
-                  loop={copied}
-                  autoplay={copied}
-                  style={{ height: 200, width: 400 }}
-                />
+                {playAnimation && (
+                  <Lottie
+                    animationData={animationData}
+                    loop={false}
+                    autoplay={true}
+                    style={{ height: 200, width: 400 }}
+                  />
+                )}
               </div>
 
               <MagicButton
