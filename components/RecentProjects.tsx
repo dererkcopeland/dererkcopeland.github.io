@@ -2,6 +2,7 @@
 
 import { projects } from "@/Data";
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
 import { PinContainer } from "./ui/3d-pin";
 import { FaLocationArrow } from "react-icons/fa";
 
@@ -33,11 +34,13 @@ const RecentProjects = () => {
                   className="relative w-full h-full lg:rounded-3xl"
                   style={{ backgroundColor: "#13162D" }}
                 >
-                  <img src="/bg.png" alt="bgimg" className="w-full h-full object-cover" />
+                  <Image src="/bg.png" alt="background" width={800} height={600} className="w-full h-full object-cover" />
                 </div>
-                <img
+                <Image
                   src={item.img}
-                  alt="cover"
+                  alt={`project-${item.title}`}
+                  width={800}
+                  height={600}
                   className="z-10 absolute bottom-0 object-cover w-full h-full"
                 />
               </div>
@@ -66,7 +69,7 @@ const RecentProjects = () => {
                         transform: `translateX(-${5 * index + 2}px)`,
                       }}
                     >
-                      <img src={icon} alt="icon5" className="p-2" />
+                      <Image src={icon} alt={`tech-icon-${index}`} width={24} height={24} className="p-2" />
                     </div>
                   ))}
                 </div>

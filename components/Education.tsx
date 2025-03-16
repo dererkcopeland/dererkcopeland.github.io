@@ -2,6 +2,7 @@ import { accomplishments, education } from "@/Data";
 import { FramerCardContainer } from "./ui/3d-card";
 import { FramerCardItem } from "./ui/3d-card";
 import { AccomplishmentsMarquee } from "./ui/AccomplishmentsMarquee";
+import Image from "next/image";
 
 export function EducationCard({
     title,
@@ -38,12 +39,12 @@ export function EducationCard({
                         {description}
                     </FramerCardItem>
                     <FramerCardItem className="w-full mt-4">
-                        <img
+                        <Image
                             src={image}
-                            height="500"
-                            width="500"
+                            height={500}
+                            width={500}
                             className="h-[300px] md:h-[400px] w-full object-contain rounded-xl"
-                            alt={`thumbnail-${image}`}
+                            alt={`thumbnail-${title}`}
                         />
                     </FramerCardItem>
                 </div>

@@ -1,7 +1,8 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
+import Image from "next/image";
 import { FramerCardContainer, FramerCardItem } from "./3d-card";
 
 export const AccomplishmentsMarquee = ({
@@ -26,31 +27,31 @@ export const AccomplishmentsMarquee = ({
   const [start, setStart] = useState(false);
   const duplicatedItems = [...items, ...items]; // Duplicate before rendering
 
-  useEffect(() => {
-    if (containerRef.current) {
-      getDirection();
-      getSpeed();
-      setStart(true);
-    }
-  }, []);
-
-  const getDirection = () => {
+  const getDirection = useCallback(() => {
     if (containerRef.current) {
       containerRef.current.style.setProperty(
         "--animation-direction",
         direction === "left" ? "forwards" : "reverse"
       );
     }
-  };
+  }, [direction]);
 
-  const getSpeed = () => {
+  const getSpeed = useCallback(() => {
     if (containerRef.current) {
       containerRef.current.style.setProperty(
         "--animation-duration",
         speed === "fast" ? "20s" : speed === "normal" ? "40s" : "80s"
       );
     }
-  };
+  }, [speed]);
+
+  useEffect(() => {
+    if (containerRef.current) {
+      getDirection();
+      getSpeed();
+      setStart(true);
+    }
+  }, [getDirection, getSpeed]);
 
   return (
     <div
@@ -78,12 +79,12 @@ export const AccomplishmentsMarquee = ({
                   rel="noopener noreferrer"
                   className="block w-full h-full"
                 >
-                  <img
+                  <Image
                     src={item.image}
-                    height="500"
-                    width="500"
+                    height={500}
+                    width={500}
                     className="h-[300px] md:h-[400px] w-full object-cover rounded-xl"
-                    alt={`thumbnail-${item.image}`}
+                    alt={`accomplishment-${item.id}`}
                   />
                 </a>
               </FramerCardItem>

@@ -12,7 +12,8 @@ import RecentProjects from "@/components/RecentProjects";
 import { FloatingNav } from "@/components/ui/FloatingNav";
 import Education from "@/components/Education";
 
-export function ClientOnly({ children }: { children: React.ReactNode }) {
+// Helper component for client-only rendering
+function ClientOnly({ children }: { children: React.ReactNode }) {
   const [hasMounted, setHasMounted] = useState(false);
 
   useEffect(() => {
