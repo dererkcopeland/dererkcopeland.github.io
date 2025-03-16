@@ -5,7 +5,7 @@ import ThreeGlobe from "three-globe";
 import { useThree, Canvas, extend } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import countries from "@/Data/globe.json";
-// @ts-expect-error - Ignoring type issues for three-globe integration
+
 declare module "@react-three/fiber" {
   interface ThreeElements {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -94,9 +94,14 @@ export function Globe({ globeConfig, data }: WorldProps) {
   };
 
   useEffect(() => {
-    if (globeRef.current) {
-      _buildData();
-      _buildMaterial();
+    // Use try-catch to handle potential errors
+    try {
+      if (globeRef.current) {
+        _buildData();
+        _buildMaterial();
+      }
+    } catch (error) {
+      console.error("Error initializing globe:", error);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [globeRef.current]);
@@ -152,18 +157,22 @@ export function Globe({ globeConfig, data }: WorldProps) {
   };
 
   useEffect(() => {
-    if (globeRef.current && globeData) {
-      globeRef.current
-        .hexPolygonsData(countries.features)
-        .hexPolygonResolution(3)
-        .hexPolygonMargin(0.7)
-        .showAtmosphere(defaultProps.showAtmosphere)
-        .atmosphereColor(defaultProps.atmosphereColor)
-        .atmosphereAltitude(defaultProps.atmosphereAltitude)
-        .hexPolygonColor(() => {
-          return defaultProps.polygonColor;
-        });
-      startAnimation();
+    try {
+      if (globeRef.current && globeData) {
+        globeRef.current
+          .hexPolygonsData(countries.features)
+          .hexPolygonResolution(3)
+          .hexPolygonMargin(0.7)
+          .showAtmosphere(defaultProps.showAtmosphere)
+          .atmosphereColor(defaultProps.atmosphereColor)
+          .atmosphereAltitude(defaultProps.atmosphereAltitude)
+          .hexPolygonColor(() => {
+            return defaultProps.polygonColor;
+          });
+        startAnimation();
+      }
+    } catch (error) {
+      console.error("Error setting up globe data:", error);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [globeData]);
@@ -210,16 +219,20 @@ export function Globe({ globeConfig, data }: WorldProps) {
     if (!globeRef.current || !globeData) return;
 
     const interval = setInterval(() => {
-      if (!globeRef.current || !globeData) return;
-      numbersOfRings = genRandomNumbers(
-        0,
-        data.length,
-        Math.floor((data.length * 4) / 5)
-      );
+      try {
+        if (!globeRef.current || !globeData) return;
+        numbersOfRings = genRandomNumbers(
+          0,
+          data.length,
+          Math.floor((data.length * 4) / 5)
+        );
 
-      globeRef.current.ringsData(
-        globeData.filter((d, i) => numbersOfRings.includes(i))
-      );
+        globeRef.current.ringsData(
+          globeData.filter((d, i) => numbersOfRings.includes(i))
+        );
+      } catch (error) {
+        console.error("Error updating rings:", error);
+      }
     }, 2000);
 
     return () => {
@@ -239,9 +252,17 @@ export function WebGLRendererConfig() {
   const { gl, size } = useThree();
 
   useEffect(() => {
-    gl.setPixelRatio(window.devicePixelRatio);
-    gl.setSize(size.width, size.height);
-    gl.setClearColor(0xffaaff, 0);
+    try {
+      // Check if window is defined (client-side only)
+      if (typeof window !== 'undefined') {
+        const pixelRatio = window.devicePixelRatio || 1;
+        gl.setPixelRatio(Math.min(pixelRatio, 2)); // Limit pixel ratio for better performance
+        gl.setSize(size.width, size.height);
+        gl.setClearColor(0xffaaff, 0);
+      }
+    } catch (error) {
+      console.error("Error configuring WebGL renderer:", error);
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

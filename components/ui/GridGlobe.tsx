@@ -1,12 +1,33 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 
-const World = dynamic(() => import("../ui/Globe").then((m) => m.World), {
-  ssr: false,
-});
+// Import the World component with SSR disabled and error handling
+const World = dynamic(
+  () => import("../ui/Globe").then((m) => m.World).catch(err => {
+    console.error("Failed to load Globe component:", err);
+    return () => null; // Fallback component
+  }),
+  {
+    ssr: false,
+    loading: () => <div className="w-full h-full bg-transparent flex items-center justify-center">
+      <div className="animate-pulse w-32 h-32 rounded-full bg-blue-500/10"></div>
+    </div>
+  }
+);
 
 const GridGlobe = () => {
+  const [isMounted, setIsMounted] = useState(false);
+
+  // Only render the component on the client side
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  // Return null during SSR to prevent hydration issues
+  if (!isMounted) {
+    return null;
+  }
   const globeConfig = {
     pointSize: 4,
     globeColor: "#0A2472", // Deeper blue for better contrast
