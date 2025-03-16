@@ -5,7 +5,7 @@ import ThreeGlobe from "three-globe";
 import { useThree, Canvas, extend } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import countries from "@/data/globe.json";
-// @ts-ignore - Ignoring type issues for three-globe integration
+// @ts-expect-error - Ignoring type issues for three-globe integration
 declare module "@react-three/fiber" {
   interface ThreeElements {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -198,7 +198,6 @@ export function Globe({ globeConfig, data }: WorldProps) {
 
     globeRef.current
       .ringsData([])
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       .ringColor((e: { color: (t: number) => string }) => (t: number) => e.color(t))
       .ringMaxRadius(defaultProps.maxRings)
       .ringPropagationSpeed(RING_PROPAGATION_SPEED)
