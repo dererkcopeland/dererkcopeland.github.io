@@ -69,7 +69,7 @@ const RecentProjects = () => {
                         transform: `translateX(-${5 * index + 2}px)`,
                       }}
                     >
-                      <Image src={icon} alt={`tech-icon-${index}`} width={24} height={24} className="p-2" />
+                      <Image src={icon} alt={`tech-icon-${index}`} width={50} height={50} className="p-2" />
                     </div>
                   ))}
                 </div>
