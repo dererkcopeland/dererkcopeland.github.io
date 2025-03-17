@@ -13,10 +13,7 @@ const nextConfig: NextConfig = {
     // your project has type errors.
     ignoreBuildErrors: true,
   },
-  // Explicitly enable the App Router
-  experimental: {
-    appDir: true,
-  },
+  
 };
 
 // Single Sentry config to avoid memory leaks
