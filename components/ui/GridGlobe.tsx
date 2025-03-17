@@ -24,12 +24,12 @@ export default function GridGlobe({
       background: "rgb(4,7,29)",
       backgroundColor: "linear-gradient(90deg, rgba(4,7,29,1) 0%, rgba(12,14,35,1) 100%)",
     }}>
-      {/* Text container with higher z-index */}
-      <div className="flex flex-col p-5 lg:p-6 z-20 relative">
-        <div className="font-sans text-lg lg:text-3xl max-w-96 font-bold pb-2 group-hover/bento:translate-x-2 transition duration-200">
+      {/* Text container with higher z-index - matches BentoGridItem styling */}
+      <div className="group-hover/bento:translate-x-2 transition duration-200 relative p-5 lg:p-6 z-20">
+        <div className="font-sans text-lg lg:text-3xl max-w-96 font-bold pb-2 z-10">
           {title}
         </div>
-        <div className="font-sans font-extralight md:text-xs lg:text-base text-sm text-[#C1C2D3]">
+        <div className="font-sans font-extralight md:text-xs lg:text-base text-sm text-[#C1C2D3] z-10">
           {description}
         </div>
       </div>

@@ -4,16 +4,15 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm install --legacy-peer-deps && next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
-    "@react-three/drei": "^10.0.3",
-    "@react-three/fiber": "^9.0.0-alpha.8",
+    "@react-three/drei": "^9.99.0",
+    "@react-three/fiber": "^8.15.19",
     "@sentry/nextjs": "^9.5.0",
     "@tabler/icons-react": "^3.30.0",
-    "@types/three": "^0.174.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "core-js": "^3.40.0",
@@ -40,6 +39,7 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "@types/react-lottie": "^1.2.10",
+    "@types/three": "^0.174.0",
     "eslint": "^9",
     "eslint-config-next": "15.1.7",
     "postcss": "^8",

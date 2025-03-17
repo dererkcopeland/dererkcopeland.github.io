@@ -35,7 +35,7 @@ function ScrollManager() {
 
   useEffect(() => {
     if (typeof window !== 'undefined' && typeof document !== 'undefined') {
-      const hash = searchParams.get("hash");
+      const hash = searchParams?.get("hash");
       if (hash) {
         const element = document.getElementById(hash);
         if (element) {

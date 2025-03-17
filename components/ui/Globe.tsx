@@ -41,14 +41,7 @@ export default function Globe() {
       size: Math.random() * 2 + 1,
     }));
     
-    // Create data for satellite dots
-    const satelliteDots = Array(50).fill(0).map(() => ({
-      lat: (Math.random() - 0.5) * 180,
-      lng: (Math.random() - 0.5) * 360,
-      alt: 0.25 + Math.random() * 0.1,
-      radius: 0.25 + Math.random() * 0.25,
-      color: ['#ffffff', '#4c83ff', '#fb44ff'][Math.floor(Math.random() * 3)],
-    }));
+
     
     // Create globe
     const globe = new ThreeGlobe()

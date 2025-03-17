@@ -3,8 +3,6 @@ import { useState } from "react";
 import { IoCopyOutline } from "react-icons/io5";
 import Image from "next/image";
 import * as THREE from 'three';
-import { TrackballControls } from 'three/examples/jsm/controls/TrackballControls';
-
 // Also install this npm i --save-dev @types/react-lottie
 import Lottie from "lottie-react";
 
@@ -100,11 +98,7 @@ export const BentoGridItem = ({
   const renderer = new THREE.WebGLRenderer();
   renderer.setSize(window.innerWidth, window.innerHeight);
 
-  // Add camera controls
-  const tbControls = new TrackballControls(camera, renderer.domElement);
-  tbControls.minDistance = 101;
-  tbControls.rotateSpeed = 5;
-  tbControls.zoomSpeed = 0.8;
+ 
 
 
   return (
