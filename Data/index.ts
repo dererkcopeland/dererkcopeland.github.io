@@ -17,6 +17,7 @@ export const gridItems = [
     titleClassName: "justify-start",
     img: "",
     spareImg: "",
+    isGlobe: true, // Flag to identify this as the globe component
   },
   {
     id: 3,

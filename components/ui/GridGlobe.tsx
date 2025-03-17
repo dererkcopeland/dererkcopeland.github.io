@@ -1,43 +1,46 @@
-"use client";
-import React, { useState, useEffect } from "react";
-import Image from "next/image";
+'use client'
 
-// Simple fallback component that shows a static globe image instead of 3D
-const GridGlobe = () => {
-  const [isMounted, setIsMounted] = useState(false);
+import React from 'react'
+import { cn } from '@/lib/utils'
+import Globe from './Globe'
 
-  // Only render the component on the client side
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
+interface GridGlobeProps {
+  className?: string
+  title?: string
+  description?: string
+}
 
-  // Return null during SSR to prevent hydration issues
-  if (!isMounted) {
-    return null;
-  }
-
+export default function GridGlobe({
+  className,
+  title = "Borderless Development",
+  description = "Crafting Android experiences for a connected world."
+}: GridGlobeProps) {
   return (
-    <div className="flex items-center justify-center relative w-full h-full">
-      <div className="absolute -top-16 right-0 w-[112%] relative overflow-hidden h-[300px] md:h-[300px] px-0 z-0">
-        {/* Gradient overlay for smooth transition */}
-        <div className="absolute w-full bottom-0 inset-x-0 h-40 bg-gradient-to-b pointer-events-none select-none from-transparent to-[#04071D] z-10" />
-        
-        {/* Static globe image instead of 3D globe */}
-        <div className="absolute w-full h-full z-0 flex items-center justify-center" style={{ transform: 'translateY(25%)' }}>
-          <div className="w-full h-full flex items-center justify-center">
-            <Image 
-              src="/globe.svg" 
-              alt="Globe visualization" 
-              width={400} 
-              height={400}
-              className="opacity-70 animate-pulse"
-              priority
-            />
-          </div>
+    <div className={cn(
+      "flex flex-col row-span-1 col-span-1 rounded-3xl border border-white/[0.1] group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none justify-between relative overflow-hidden",
+      className
+    )}
+    style={{
+      background: "rgb(4,7,29)",
+      backgroundColor: "linear-gradient(90deg, rgba(4,7,29,1) 0%, rgba(12,14,35,1) 100%)",
+    }}>
+      {/* Text container with higher z-index */}
+      <div className="flex flex-col p-5 lg:p-6 z-20 relative">
+        <div className="font-sans text-lg lg:text-3xl max-w-96 font-bold pb-2 group-hover/bento:translate-x-2 transition duration-200">
+          {title}
+        </div>
+        <div className="font-sans font-extralight md:text-xs lg:text-base text-sm text-[#C1C2D3]">
+          {description}
         </div>
       </div>
+      
+      {/* Globe container positioned absolutely to overlap with text */}
+      <div className="absolute inset-0 top-[20px] md:top-[10px] lg:top-[0px] h-full z-10">
+        <Globe />
+      </div>
+      
+      {/* Semi-transparent gradient overlay to improve text readability */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[rgba(4,7,29,0.8)] via-[rgba(4,7,29,0.4)] to-transparent z-[15] pointer-events-none"></div>
     </div>
-  );
-};
-
-export default GridGlobe;
+  )
+}
