@@ -21,7 +21,7 @@ export const gridItems = [
   {
     id: 3,
     title: "Tech Stack",
-    description: "Powered by cutting-edge technologies that deliver results. My toolkit includes: Android SDK, Jetpack Compose, Objectbox, Kotlin, Java, Firebase.",
+    description: "Powered by cutting-edge technologies that deliver results. My toolkit includes: Android SDK, Jetpack Compose, Kotlin, Java, Firebase.",
     className: "md:col-span-1 lg:col-span-1", // Each item takes up 1 column on md and lg
     imgClassName: "",
     titleClassName: "justify-center",
@@ -150,7 +150,7 @@ export const socialMedia = [
 export const education = 
   {
     id: 1,
-    title: "BS: Information Technology - Software Development\nSpecialization: Mobile Development",
+    title: "BS: Information Technology - Software Development,\nConcentration: Mobile Development",
     graduationDate: "Expected - 2027",
     subheading: "Capella University",
     description: `I am actively engaged in Capella University's Bachelor of Science in Information Technology (BSIT) program, specializing in Software Development with a focused concentration in Mobile Development. This comprehensive program is designed to provide me with a robust understanding of modern software development principles, methodologies, and practices.

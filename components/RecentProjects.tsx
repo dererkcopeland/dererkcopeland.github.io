@@ -18,7 +18,7 @@ const RecentProjects = () => {
   return (
     <div className="py-20 relative" id="projects">
       <h1 className="heading mt-16 md:mt-24 mb-10 text-center">
-        A <span className="text-purple">Recent Project</span>
+        <span className="text-purple">A Recent Project</span>
       </h1>
 
       <div className="flex flex-wrap items-center justify-center p-4 gap-16 mt-20">

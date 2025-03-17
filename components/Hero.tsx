@@ -62,6 +62,7 @@ const Hero = () => {
           </p>
 
           <a 
+            className="md:mt-10 mt-5"
             href="#projects" 
             onClick={(e) => {
               e.preventDefault();
@@ -74,8 +75,7 @@ const Hero = () => {
             <MagicButton
               title="Show my work"
               icon={<FaLocationArrow />}
-              position="right"
-            />
+              position="right"/>
           </a>
         </div>
       </div>
