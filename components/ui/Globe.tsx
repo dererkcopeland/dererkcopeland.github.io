@@ -60,10 +60,7 @@ export default function Globe() {
       .hexPolygonMargin(0.05)
       .hexPolygonResolution(3)
       .hexPolygonCurvatureResolution(5)
-      .pointsData(satelliteDots)
-      .pointAltitude('alt')
-      .pointColor('color')
-      .pointRadius('radius');
+
     
     // Add glowing atmosphere
     const atmosphereGeometry = new THREE.SphereGeometry(1.025, 32, 32);
