@@ -58,7 +58,7 @@ const Hero = () => {
           />
 
           <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
-            I&apos;m Dererk, an <span className="text-green-500">Android Developer</span> based in the United States.
+            I&apos;m Dererk, an <span className="text-green-500">Mobile Developer</span> based in the United States.
           </p>
 
           <a 
