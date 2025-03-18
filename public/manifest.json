@@ -1,0 +1,16 @@
+{
+  "name": "Dererk Copeland Portfolio",
+  "short_name": "DC Portfolio",
+  "description": "Dererk Copeland's portfolio website showcasing mobile app development expertise",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000319",
+  "theme_color": "#CBACF9",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}

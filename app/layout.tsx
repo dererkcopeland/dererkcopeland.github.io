@@ -8,13 +8,18 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const viewport: Viewport = {
   themeColor: "#CBACF9",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
 };
 
 export const metadata: Metadata = {
   title: "Dererk Copeland | Portfolio",
   description: "Modern & Minimal",
   appleWebApp: {
-    statusBarStyle: "purple-translucent",
+    capable: true,
+    statusBarStyle: "default",
+    title: "Dererk Copeland",
   },
 };
 
@@ -27,7 +32,12 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="icon" href="/favicon.png" sizes="any" />
+        <link rel="manifest" href="/manifest.json" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="theme-color" content="#CBACF9" />
+        <meta name="msapplication-navbutton-color" content="#CBACF9" />
+        <meta name="msapplication-TileColor" content="#CBACF9" />
       </head>
       <body className={inter.className}>
         <ThemeProvider
