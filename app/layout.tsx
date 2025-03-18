@@ -6,17 +6,24 @@ import { ThemeProvider } from "./provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
-// Simple viewport settings
+// Viewport settings with theme color for Android
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
+  themeColor: "#CBACF9", // Purple color from headings
 };
 
-// Basic metadata
+// Metadata with iOS and Android configurations
 export const metadata: Metadata = {
   title: "Dererk Copeland | Portfolio",
   description: "Modern & Minimal",
+  appleWebApp: {
+    capable: true,
+    title: "Dererk Copeland",
+    statusBarStyle: "default"
+  },
+  themeColor: "#CBACF9"
 };
 
 export default function RootLayout({
@@ -25,18 +32,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning style={{ backgroundColor: "#000319" }}>
       <head>
         {/* Basic favicon */}
         <link rel="icon" href="/favicon.png" sizes="any" />
         <link rel="manifest" href="/manifest.json" />
         
-        {/* Single, simple theme-color meta tag for Android */}
+        {/* Single, simple theme-color meta tag for Android - exactly matching the heading purple color */}
         <meta name="theme-color" content="#CBACF9" />
         
-        {/* Simple iOS meta tags */}
+        {/* iOS meta tags - using default status bar style with color */}
         <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="apple-mobile-web-app-title" content="Dererk Copeland" />
         
         {/* Add touch icon for iOS */}
