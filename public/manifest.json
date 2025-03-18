@@ -1,15 +1,19 @@
 {
   "name": "Dererk Copeland Portfolio",
-  "short_name": "DC Portfolio",
-  "description": "Dererk Copeland's portfolio website",
-  "start_url": "/",
+  "short_name": "Dererk Portfolio",
+  "description": "Modern & Minimal Portfolio",
+  "theme_color": "#CBACF9",
+  "background_color": "#CBACF9",
   "display": "standalone",
-  "background_color": "#000319",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/",
   "icons": [
     {
       "src": "/favicon.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }

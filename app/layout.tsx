@@ -30,10 +30,21 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {/* Apple-specific meta tags for status bar color */}
+        {/* Mobile status bar color settings */}
+        {/* Android Chrome specific */}
+        <meta name="theme-color" content="#CBACF9" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="application-name" content="Dererk Copeland" />
+        <link rel="manifest" href="/manifest.json" />
+
+        {/* iOS specific */}
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        <meta name="theme-color" content="#CBACF9" />
+        <meta name="apple-mobile-web-app-title" content="Dererk Copeland" />
+
+        {/* Universal */}
+        <meta name="theme-color" media="(prefers-color-scheme: light)" content="#CBACF9" />
+        <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#CBACF9" />
       </head>
       <body className={inter.className}>
         <ThemeProvider
