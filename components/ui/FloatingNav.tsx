@@ -65,9 +65,19 @@ export const FloatingNav = ({
             onClick={(e) => {
               e.preventDefault();
               const targetId = navItem.link.replace('#', '');
+              
+              // Special case for scrolling to top
+              if (targetId === '') {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                return;
+              }
+              
               const element = document.getElementById(targetId);
               if (element) {
-                element.scrollIntoView({ behavior: 'smooth' });
+                // Get the nav height for proper offset
+                const navHeight = document.querySelector("nav")?.clientHeight || 0;
+                const offsetTop = element.offsetTop - navHeight - 10;
+                window.scrollTo({ top: offsetTop, behavior: 'smooth' });
               }
             }}
             className={cn(
