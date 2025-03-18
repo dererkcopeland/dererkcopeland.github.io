@@ -58,19 +58,21 @@ export const AccomplishmentsMarquee = ({
       ref={containerRef}
       className={cn(
         "scroller relative z-20 max-w-7xl overflow-hidden",
-        className
+        className,
+        "before:absolute before:left-0 before:top-0 before:z-20 before:h-full before:w-[120px] before:bg-gradient-to-r before:from-black-100 before:to-transparent",
+        "after:absolute after:right-0 after:top-0 after:z-20 after:h-full after:w-[120px] after:bg-gradient-to-l after:from-black-100 after:to-transparent"
       )}
     >
       <ul
         ref={scrollerRef}
         className={cn(
-          "flex min-w-full shrink-0 gap-8 py-4 w-max flex-nowrap",
+          "flex min-w-full shrink-0 gap-8 py-4 w-max flex-nowrap relative z-5",
           start && "animate-scroll",
           pauseOnHover && "hover:[animation-play-state:paused]"
         )}
       >
         {duplicatedItems.map((item, idx) => (
-          <li key={idx} className="flex-shrink-0 w-[350px] md:w-[450px] px-2">
+          <li key={idx} className="flex-shrink-0 w-[350px] md:w-[450px] px-2 relative z-10">
             <FramerCardContainer className="inter-var">
               <FramerCardItem className="overflow-hidden">
                 <a
