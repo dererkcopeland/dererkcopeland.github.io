@@ -57,7 +57,7 @@ export const AccomplishmentsMarquee = ({
     <div
       ref={containerRef}
       className={cn(
-        "scroller relative z-20 max-w-7xl overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",
+        "scroller relative z-20 max-w-7xl overflow-hidden",
         className
       )}
     >
@@ -70,9 +70,9 @@ export const AccomplishmentsMarquee = ({
         )}
       >
         {duplicatedItems.map((item, idx) => (
-          <li key={idx} className="flex-shrink-0 w-[400px] md:w-[500px]">
+          <li key={idx} className="flex-shrink-0 w-[350px] md:w-[450px] px-2">
             <FramerCardContainer className="inter-var">
-              <FramerCardItem>
+              <FramerCardItem className="overflow-hidden">
                 <a
                   href={item.url}
                   target="_blank"
@@ -83,8 +83,9 @@ export const AccomplishmentsMarquee = ({
                     src={item.image}
                     height={500}
                     width={500}
-                    className="h-[300px] md:h-[400px] w-full object-cover rounded-xl"
+                    className="h-[300px] md:h-[400px] w-full object-contain rounded-xl"
                     alt={`accomplishment-${item.id}`}
+                    style={{ maxWidth: '100%' }}
                   />
                 </a>
               </FramerCardItem>

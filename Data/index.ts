@@ -12,7 +12,7 @@ export const gridItems = [
   {
     id: 2,
     title: "Borderless Development",
-    description: "Crafting Android experiences for a connected world.",
+    description: "Crafting Mobile experiences for a connected world.",
     className: "md:col-span-1 lg:col-span-1", // Each item takes up 1 column on md and lg
     imgClassName: "",
     titleClassName: "justify-start",

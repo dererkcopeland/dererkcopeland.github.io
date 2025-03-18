@@ -155,8 +155,11 @@ const config = {
   				}
   			},
   			scroll: {
+  				from: {
+  					transform: 'translateX(0)'
+  				},
   				to: {
-  					transform: 'translate(calc(-50% - 0.5rem))'
+  					transform: 'translateX(calc(-50%))'
   				}
   			}
   		},
