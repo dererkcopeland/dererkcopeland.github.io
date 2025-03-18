@@ -11,6 +11,7 @@ import Footer from "@/components/Footer";
 import RecentProjects from "@/components/RecentProjects";
 import { FloatingNav } from "@/components/ui/FloatingNav";
 import Education from "@/components/Education";
+import BackToTop from "@/components/ui/BackToTop";
 
 // Helper component for client-only rendering
 function ClientOnly({ children }: { children: React.ReactNode }) {
@@ -70,6 +71,7 @@ const Home = () => {
           <RecentProjects />
           <Education />
           <Footer />
+          <BackToTop />
         </div>
       </main>
     </ClientOnly>
