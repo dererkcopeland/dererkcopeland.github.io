@@ -2,7 +2,6 @@ import type { Config } from "tailwindcss";
 
 import svgToDataUri from "mini-svg-data-uri";
 import colors from "tailwindcss/colors";
-// @ts-ignore - Using untyped module
 import flattenColorPalette from "tailwindcss/lib/util/flattenColorPalette";
 import animate from "tailwindcss-animate";
 

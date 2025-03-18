@@ -6,16 +6,20 @@ import { ThemeProvider } from "./provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
-// Basic viewport settings
+// Viewport settings with the purple color from headings
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
+  themeColor: '#CBACF9',
 };
 
 // Basic metadata
 export const metadata: Metadata = {
   title: "Dererk Copeland | Portfolio",
   description: "Modern & Minimal",
+  icons: {
+    icon: "/favicon.png",
+  }
 };
 
 export default function RootLayout({
@@ -26,7 +30,10 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/favicon.png" sizes="any" />
+        {/* Apple-specific meta tags for status bar color */}
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="theme-color" content="#CBACF9" />
       </head>
       <body className={inter.className}>
         <ThemeProvider
