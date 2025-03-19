@@ -149,9 +149,24 @@ export const socialMedia = [
   },
 ];
 
-export const education = 
+export const education = [
   {
     id: 1,
+    title: "Meta Android Developer Professional Certificate",
+    graduationDate: "Completed - 2025",
+    subheading: "Meta & Coursera",
+    description: `The Meta Android Developer Professional Certificate is an industry-recognized credential that demonstrates my proficiency in Android application development using modern best practices. This comprehensive program has equipped me with hands-on skills in developing, testing, and deploying Android applications.
+
+    Through this certification, I gained expertise in Kotlin programming, Android architecture, UI/UX design principles, and data management. The curriculum covered essential topics including Material Design implementation, responsive layouts, database integration using Room, network operations with Retrofit, state management, and testing methodologies to ensure high-quality, reliable applications.
+    
+    The program also emphasized practical application through real-world projects, allowing me to build a portfolio of Android applications that showcase my capabilities as a developer. Additionally, I learned professional development best practices, including version control with Git, and collaborative workflow techniques that are essential in professional development environments.
+    
+    This certification has prepared me to design, develop, and deploy professional-grade Android applications that meet industry standards and user expectations.`,
+    image: "/meta-coursera.jpg",
+    certificationLink: "https://www.coursera.org/account/accomplishments/specialization/V1MXNVLPU9EP", // Replace with your actual certification link
+  },
+  {
+    id: 2,
     title: "BS: Information Technology - Software Development,\nConcentration: Mobile Development",
     graduationDate: "Expected - 2027",
     subheading: "Capella University",
@@ -161,8 +176,8 @@ export const education =
     
     The Mobile Development concentration specifically prepares me to apply core software development knowledge to the creation of applications designed for mobile environments. I am learning to plan, evaluate, design, and manage mobile applications across various scales, from single-user applications to complex enterprise solutions. This specialization is equipping me with the skills and knowledge necessary to pursue a successful career as a mobile application designer, mobile developer, or software engineer, and to pursue relevant industry certifications in the mobile development field.`,
     image: "/capella1.png",
-
-  };
+  }
+];
 
 export const accomplishments = [
   {
