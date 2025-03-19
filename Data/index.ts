@@ -23,7 +23,7 @@ export const gridItems = [
   {
     id: 3,
     title: "Tech Stack",
-    description: "Powered by cutting-edge technologies that deliver results. My toolkit includes: Android SDK, Jetpack Compose, Kotlin, Java, Firebase.",
+    description: "Powered by cutting-edge technologies that deliver results. My toolkit includes: Android SDK, Jetpack Compose, Kotlin, Java, JavaScript, NodeJS, React, React Native, Firebase.",
     className: "md:col-span-1 lg:col-span-1", // Each item takes up 1 column on md and lg
     imgClassName: "",
     titleClassName: "justify-center",
@@ -172,7 +172,7 @@ export const education = [
     subheading: "Capella University",
     description: `I am actively engaged in Capella University's Bachelor of Science in Information Technology (BSIT) program, specializing in Software Development with a focused concentration in Mobile Development. This comprehensive program is designed to provide me with a robust understanding of modern software development principles, methodologies, and practices.
 
-    My coursework emphasizes the development of increasingly complex computer programs and end-user mobile applications, employing Agile methods for efficient and iterative development. I am gaining proficiency in the full software development lifecycle, encompassing software requirements definition, design, construction, testing, and the implementation of robust application security measures, all tailored to the unique demands of mobile platforms.
+    My coursework emphasizes the development of increasingly complex computer programs and end-user mobile applications, employing Agile methods for efficient and iterative development. I am gaining proficiency in the full software development lifecycle, encompassing software requirements definition, design, construction, and testing, all tailored to the unique demands of mobile platforms.
     
     The Mobile Development concentration specifically prepares me to apply core software development knowledge to the creation of applications designed for mobile environments. I am learning to plan, evaluate, design, and manage mobile applications across various scales, from single-user applications to complex enterprise solutions. This specialization is equipping me with the skills and knowledge necessary to pursue a successful career as a mobile application designer, mobile developer, or software engineer, and to pursue relevant industry certifications in the mobile development field.`,
     image: "/capella1.png",
