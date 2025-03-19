@@ -9,7 +9,7 @@ const GridGlobe = dynamic(() => import("./ui/GridGlobe"), { ssr: false });
 const Grid = () => {
   return (
     <section id="about">
-      <BentoGrid className="w-full py-20">
+      <BentoGrid className="w-full py-24 md:py-28 lg:py-32">
         {gridItems.map((item, i) => (
           item.isGlobe ? (
             <GridGlobe

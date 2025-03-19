@@ -7,7 +7,7 @@ import { TextGenerateEffect } from "./ui/TextGenerateEffect";
 
 const Hero = () => {
   return (
-    <div className="pb-20 pt-36 relative">
+    <div className="py-24 md:py-28 lg:py-32 relative">
 
       {/**
        *  UI: Spotlights

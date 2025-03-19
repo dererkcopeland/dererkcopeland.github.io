@@ -159,7 +159,7 @@ export function EducationCard({
 
 const Education = () => {
     return (
-        <div className="py-20 relative" id="education">
+        <div className="py-24 md:py-28 lg:py-32 relative" id="education">
             {/* Background Element */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden">
                 <div className="absolute -right-64 top-20 w-96 h-96 bg-purple/10 rounded-full filter blur-3xl opacity-30" />
@@ -185,7 +185,7 @@ const Education = () => {
                     ))}
                 </div>
                 
-                <div className="mt-24">
+                <div className="mt-16">
                     <AccomplishmentsMarquee items={accomplishments} />
                 </div>
             </div>
