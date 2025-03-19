@@ -17,14 +17,14 @@ const RecentProjects = () => {
 
   return (
     <div className="py-24 md:py-28 lg:py-32 relative" id="projects">
-      <h1 className="heading mb-16 text-center">
-        <span className="text-purple">A Recent Project</span>
+      <h1 className="pb-20 heading mb-16 text-center">
+        <span className="text-purple">Recent Projects</span>
       </h1>
 
       <div className="flex flex-wrap items-center justify-center p-4 gap-16">
         {projects.map((item, index) => (
           <div
-            className="lg:min-h-[35rem] h-[28rem] flex items-center justify-center sm:w-[420px] w-[90vw]"
+            className="pt-25 lg:min-h-[35rem] h-[28rem] flex items-center justify-center sm:w-[420px] w-[90vw]"
             key={`${item.id}-${index}`}
           >
             {/* Option 1: Keep PinContainer link but remove inner link */}
