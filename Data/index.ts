@@ -59,7 +59,7 @@ export const projects = [
     des: "Doojoo is an innovative AI lyrics generator that transforms simple prompts into custom, creative song lyrics tailored to your musical style and emotional needs.",
     img: "/preview2.jpeg",
     iconLists: ["/i1.png", "/i2.webp", "/i3.png", "/i4.svg", "/i5.webp"],
-    link: "https://play.google.com/store/apps/details?id=com.doojoo.lyric&hl=en_US",
+    link: "https://doojoo.online",
   },
 ]
 export const testimonials = [
